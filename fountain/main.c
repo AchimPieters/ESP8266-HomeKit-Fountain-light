@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <espressif/esp_wifi.h>
-#include <espressif/esp_sta.h>
+//#include <espressif/esp_wifi.h>
+//#include <espressif/esp_sta.h>
 #include <espressif/esp_common.h>
 #include <esp/uart.h>
 #include <esp8266.h>
@@ -11,8 +11,8 @@
 
 #include <homekit/homekit.h>
 #include <homekit/characteristics.h>
-#include "wifi.h"
-//#include <wifi_config.h>
+//#include "wifi.h"
+#include <wifi_config.h>
 
 #include "ws2812_i2s/ws2812_i2s.h"
 #include "button.h"
@@ -101,16 +101,16 @@ void led_string_set(void) {
     led_string_fill(rgb);
 }
 
-static void wifi_init() {
-    struct sdk_station_config wifi_config = {
-        .ssid = WIFI_SSID,
-        .password = WIFI_PASSWORD,
-    };
+//static void wifi_init() {
+//    struct sdk_station_config wifi_config = {
+//        .ssid = WIFI_SSID,
+//        .password = WIFI_PASSWORD,
+//    };
 
-    sdk_wifi_set_opmode(STATION_MODE);
-    sdk_wifi_station_set_config(&wifi_config);
-    sdk_wifi_station_connect();
-}
+//    sdk_wifi_set_opmode(STATION_MODE);
+//    sdk_wifi_station_set_config(&wifi_config);
+//    sdk_wifi_station_connect();
+//}
 
 void led_init() {
     // initialise the onboard led as a secondary indicator (handy for testing)
@@ -277,7 +277,7 @@ homekit_accessory_t *accessories[] = {
             ),
             NULL
           }),
-          HOMEKIT_SERVICE(HUMIDITY_SENSOR, .characteristics=(homekit_characteristic_t*[]) {
+          HOMEKIT_SERVICE(SWITCH, .characteristics=(homekit_characteristic_t*[]) {
               HOMEKIT_CHARACTERISTIC(NAME, "Switch"),
               &switch_on,
               NULL
@@ -305,7 +305,8 @@ void user_init(void) {
     snprintf(name_value, name_len + 1, "Fountain-%02X%02X%02X", macaddr[3], macaddr[4], macaddr[5]);
     name.value = HOMEKIT_STRING(name_value);
 
-    wifi_init();
+    // wifi_init();
+void on_wifi_ready(); //Important - add this line!
     led_init();
     homekit_server_init(&config);
 }
