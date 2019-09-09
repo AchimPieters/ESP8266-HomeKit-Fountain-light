@@ -1,6 +1,8 @@
 # ESP8266-HomeKit-Fountain-light
 ESP8266 – HomeKit Fountain light
 
+For More Information Visit http://www.studiopieters.nl/
+
 - [x] Make a new NeoPixel Ring
 - [x] Beta Testing Software
 - [x] Make A PCB
