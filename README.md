@@ -9,7 +9,8 @@ For More Information Visit http://www.studiopieters.nl/
 - [x] Ordering PCB Parts
 - [x] Beta Testing PCB
 - [x] Hardware Installation
-- [ ] Make POC Movie
+- [x] Make POC Movie
+- [ ] Make end result Movie
 - [x] Release KiCad files
 - [x] Release gerber files
 
