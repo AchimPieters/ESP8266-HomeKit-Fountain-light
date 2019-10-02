@@ -7,9 +7,11 @@ For More Information Visit http://www.studiopieters.nl/
 - [x] Beta Testing Software
 - [x] Make A PCB
 - [x] Ordering PCB Parts
-- [ ] Beta Testing PCB
-- [ ] ...
-
+- [x] Beta Testing PCB
+- [x] Hardware Installation
+- [ ] Make POC Movie
+- [x] Release KiCad files
+- [x] Release gerber files
 
 
 
